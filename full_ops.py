@@ -29,13 +29,8 @@ def fully_connected_ops(c_in, n_wv):
     w_out = 1     # Width is 1 for fully-connected layers
 
     # Operations count
-    # Additions
-    adds = n_wv * (c_in - 1)
-    
-    # Multiplications
     muls = n_wv * c_in
-    
-    # Divisions
+    adds = muls # Accounting for Bias Term
     divs = 0
 
     return c_out, h_out, w_out, adds, muls, divs
